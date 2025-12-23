@@ -1,6 +1,6 @@
 import type { VercelRequest, VercelResponse } from "@vercel/node";
-import { generateAnswer } from "./lib/groq";
-import { queryContext } from "./lib/pinecone";
+import { generateAnswer } from "./lib/groq.js";
+import { queryContext } from "./lib/pinecone.js";
 
 interface ChatRequest {
     question: string;

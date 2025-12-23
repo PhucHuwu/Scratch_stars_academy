@@ -14,7 +14,6 @@ dist/
 downloads/
 eggs/
 .eggs/
-lib/
 lib64/
 parts/
 sdist/
@@ -217,3 +216,6 @@ node_modules/
 dist/
 *.local
 .vercel
+
+.vercel
+.env*.local
