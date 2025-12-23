@@ -1,0 +1,157 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800;900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Playful, kid-friendly color palette */
+    --background: 45 100% 98%;
+    --foreground: 240 20% 20%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 240 20% 20%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 240 20% 20%;
+
+    /* Bright Orange - Primary */
+    --primary: 24 95% 55%;
+    --primary-foreground: 0 0% 100%;
+
+    /* Teal/Turquoise - Secondary */
+    --secondary: 174 72% 45%;
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 45 30% 92%;
+    --muted-foreground: 240 10% 45%;
+
+    /* Yellow - Accent */
+    --accent: 48 100% 55%;
+    --accent-foreground: 240 20% 20%;
+
+    /* Purple - for variety */
+    --purple: 270 70% 60%;
+    --purple-foreground: 0 0% 100%;
+
+    /* Green - success/learning */
+    --success: 142 70% 45%;
+    --success-foreground: 0 0% 100%;
+
+    /* Pink - playful accent */
+    --pink: 340 80% 65%;
+    --pink-foreground: 0 0% 100%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 45 30% 88%;
+    --input: 45 30% 88%;
+    --ring: 24 95% 55%;
+
+    --radius: 1rem;
+
+    /* Gradients */
+    --gradient-hero: linear-gradient(135deg, hsl(24, 95%, 55%) 0%, hsl(340, 80%, 65%) 50%, hsl(270, 70%, 60%) 100%);
+    --gradient-card: linear-gradient(180deg, hsl(0, 0%, 100%) 0%, hsl(45, 100%, 98%) 100%);
+    --gradient-button: linear-gradient(135deg, hsl(24, 95%, 55%) 0%, hsl(24, 95%, 45%) 100%);
+    --gradient-secondary: linear-gradient(135deg, hsl(174, 72%, 45%) 0%, hsl(174, 72%, 35%) 100%);
+
+    /* Shadows */
+    --shadow-soft: 0 4px 20px -4px hsl(24 95% 55% / 0.15);
+    --shadow-card: 0 8px 30px -8px hsl(240 20% 20% / 0.1);
+    --shadow-button: 0 4px 14px -2px hsl(24 95% 55% / 0.4);
+    --shadow-glow: 0 0 40px hsl(24 95% 55% / 0.3);
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    --background: 240 20% 10%;
+    --foreground: 45 30% 95%;
+
+    --card: 240 20% 14%;
+    --card-foreground: 45 30% 95%;
+
+    --popover: 240 20% 14%;
+    --popover-foreground: 45 30% 95%;
+
+    --primary: 24 95% 60%;
+    --primary-foreground: 240 20% 10%;
+
+    --secondary: 174 72% 50%;
+    --secondary-foreground: 240 20% 10%;
+
+    --muted: 240 15% 20%;
+    --muted-foreground: 45 20% 70%;
+
+    --accent: 48 100% 55%;
+    --accent-foreground: 240 20% 10%;
+
+    --purple: 270 70% 65%;
+    --pink: 340 80% 70%;
+    --success: 142 70% 50%;
+
+    --destructive: 0 70% 50%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 240 15% 25%;
+    --input: 240 15% 25%;
+    --ring: 24 95% 60%;
+
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    font-family: 'Nunito', sans-serif;
+  }
+}
+
+@layer utilities {
+  .text-gradient {
+    @apply bg-clip-text text-transparent;
+    background-image: var(--gradient-hero);
+  }
+
+  .bg-gradient-hero {
+    background-image: var(--gradient-hero);
+  }
+
+  .shadow-soft {
+    box-shadow: var(--shadow-soft);
+  }
+
+  .shadow-card {
+    box-shadow: var(--shadow-card);
+  }
+
+  .shadow-button {
+    box-shadow: var(--shadow-button);
+  }
+
+  .shadow-glow {
+    box-shadow: var(--shadow-glow);
+  }
+}
