@@ -20,14 +20,15 @@ export async function generateAnswer(question: string, context: string): Promise
         const systemContent = SYSTEM_PROMPT.replace("{context}", context || "Không có thông tin tham khảo.");
 
         const completion = await groq.chat.completions.create({
-            model: "llama-3.3-70b-versatile",
+            model: "openai/gpt-oss-120b",
             messages: [
                 { role: "system", content: systemContent },
                 { role: "user", content: question },
             ],
             temperature: 1,
-            max_tokens: 1024,
+            max_tokens: 8192,
             top_p: 1,
+            stream: false,
         });
 
         return completion.choices[0]?.message?.content || "Xin lỗi, tôi không thể trả lời câu hỏi này.";
