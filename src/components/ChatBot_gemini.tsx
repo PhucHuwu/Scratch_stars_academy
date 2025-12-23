@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { MessageCircle, X, Send, Bot } from "lucide-react";
 import robotTeacher from "@/assets/robot-teacher.png";
 import ReactMarkdown from "react-markdown";
+import remarkGfm from "remark-gfm";
 
 interface Message {
     id: number;
@@ -140,11 +141,11 @@ const ChatBot = () => {
                                         <div
                                             className={`text-sm ${
                                                 message.isBot
-                                                    ? "prose prose-sm max-w-none dark:prose-invert prose-p:my-1 prose-headings:my-2 prose-ul:my-1 prose-ol:my-1 prose-li:my-0.5 prose-pre:bg-slate-800 prose-pre:text-slate-100 prose-code:bg-slate-200 prose-code:dark:bg-slate-700 prose-code:px-1 prose-code:py-0.5 prose-code:rounded prose-code:text-xs prose-code:before:content-none prose-code:after:content-none"
+                                                    ? "prose prose-sm max-w-none dark:prose-invert prose-p:my-1 prose-headings:my-2 prose-ul:my-1 prose-ol:my-1 prose-li:my-0.5 prose-pre:bg-slate-800 prose-pre:text-slate-100 prose-code:bg-slate-200 prose-code:dark:bg-slate-700 prose-code:px-1 prose-code:py-0.5 prose-code:rounded prose-code:text-xs prose-code:before:content-none prose-code:after:content-none prose-table:border-collapse prose-table:w-full prose-table:text-xs prose-th:border prose-th:border-slate-300 prose-th:dark:border-slate-600 prose-th:bg-slate-100 prose-th:dark:bg-slate-700 prose-th:px-2 prose-th:py-1 prose-td:border prose-td:border-slate-300 prose-td:dark:border-slate-600 prose-td:px-2 prose-td:py-1"
                                                     : ""
                                             }`}
                                         >
-                                            {message.isBot ? <ReactMarkdown>{message.text}</ReactMarkdown> : <p>{message.text}</p>}
+                                            {message.isBot ? <ReactMarkdown remarkPlugins={[remarkGfm]}>{message.text}</ReactMarkdown> : <p>{message.text}</p>}
                                         </div>
                                     </div>
                                 </motion.div>
